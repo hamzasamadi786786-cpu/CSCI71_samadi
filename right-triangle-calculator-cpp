@@ -1,0 +1,49 @@
+/*
+----------------------------------------
+Program Name: Right Triangle Calculator
+File Name: right_triangle_calculator.cpp
+Author: Hamza Samadi
+Description:
+- Reads the user's full name using getline()
+- Accepts two legs of a right triangle
+- Calculates the hypotenuse using the Pythagorean Theorem
+- Outputs the result with fixed-point precision
+----------------------------------------
+*/
+
+#include <iostream>
+#include <cmath>
+#include <string>
+#include <iomanip>
+using namespace std;
+
+//Done by Hamza Samadi
+int main() {
+    string fullName;
+    cout << " Enter full name: ";
+    cin >> fullName;
+    getline(cin, fullName);
+
+    double legA;
+    double legB;
+    double legC;
+
+    cout << " Enter the of length leg A: ";
+    cin >> legA;
+    cout << " Enter the length of leg B: ";
+    cin >> legB;
+
+    legC = sqrt(pow(legA,2) + pow(legB,2));
+
+    cout << " Hello, " << fullName << "!" << endl;
+    cout << fixed << setprecision(2);
+    cout << " The hypotenuse length is: " << legC << endl;
+
+    if (legC >= 10) {
+        cout << "Large triangle" << endl;
+    } else {
+        cout << "Small triangle" << endl;
+    }
+
+    return 0;
+}
